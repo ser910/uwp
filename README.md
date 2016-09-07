@@ -1,2 +1,2 @@
 # uwp
-New repository with Mycola Demydyuk 
+New repository with Mykola Demydyuk 
