@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using IGame;
 
-namespace Tank.GameObject
+namespace Tank
 {
     public abstract class Bullet : IGameObject
     {

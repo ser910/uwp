@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GameObject\BrickWall.cs" />
+    <Compile Include="GameObject\Bullet.cs" />
     <Compile Include="GameObject\Wall.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
