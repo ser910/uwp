@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using IGame;
 
-namespace Tank.GameObject
+namespace Tank
 {
-    public abstract class Wall : IGameObject
+    public abstract class Wall : ITankGameObject
     {
         protected string _type;
         public string Type { get { return _type; } }
