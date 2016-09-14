@@ -31,7 +31,7 @@ namespace Tank
         {
             get
             {
-                return pos.X;
+                return (int)pos.X;
             }
         }
 
@@ -39,7 +39,7 @@ namespace Tank
         {
             get
             {
-                return pos.Y;
+                return (int)pos.Y;
             }
         }
 
@@ -53,10 +53,7 @@ namespace Tank
 
         public bool Transparante
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
+            get { return false; }
         }
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)
