@@ -18,5 +18,8 @@ namespace IGame
 
         //Статус объекта
         string Status { get; }
+
+        //Проходимость объекта другими объектами
+        bool Transparante { get; }
     }
 }
