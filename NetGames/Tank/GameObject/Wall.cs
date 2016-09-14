@@ -18,8 +18,11 @@ namespace Tank.GameObject
         public int X { get { return _x; } }
         public int Y { get { return _y; } }
 
-        protected string status;
-        public string Status { get { return status; } }
+        protected string _status;
+        public string Status { get { return _status; } }
+
+        protected bool _transparante;
+        public bool Transparante { get; }
 
         public Wall(int X, int Y)
         {
@@ -28,7 +31,9 @@ namespace Tank.GameObject
             this._x = X;
             this._y = Y;
 
-            status = "created";
+            this._transparante = false;
+
+            this._status = "created";
         }
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)

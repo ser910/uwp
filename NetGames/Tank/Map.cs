@@ -30,11 +30,14 @@ namespace Tank
         {
             foreach(IGameObject item in _gameObjects)
             {
-                if(item.X == NewObject.X && item.Y == NewObject.Y)
+                if(item.X == NewObject.X && item.Y == NewObject.Y && item.Transparante == false && NewObject.Transparante == false)
                 {
                     return null;
                 }                
             }
+
+            _gameObjects.Add(NewObject);
+            return NewObject;
         }
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)
