@@ -7,7 +7,7 @@ using System.Runtime.Serialization;
 
 namespace IGame
 {
-    interface IGame: ISerializable
+    public interface IGame : ISerializable
     {
         //Сохранение и загрузка уровня, положения объектов и других параметров игры с помощю сереализации
         bool Save();
