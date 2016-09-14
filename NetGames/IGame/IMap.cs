@@ -9,7 +9,7 @@ namespace IGame
 {
     interface IMap: ISerializable
     {
-        //Розмер карты
+        //Размер карты
         int X { get; }
         int Y { get; }
 
