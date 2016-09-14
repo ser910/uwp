@@ -43,6 +43,22 @@ namespace Tank
             }
         }
 
+        public string Status
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public bool Transparante
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             throw new NotImplementedException();
