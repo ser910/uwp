@@ -9,8 +9,10 @@ namespace IGame
 {
     interface IGameObject: ISerializable
     {
+        //Тип объекта
         string Type { get; }
 
+        //Положение объекта на карте
         int X { get; }
         int Y { get; }
     }
