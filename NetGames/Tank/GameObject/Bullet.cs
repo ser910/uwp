@@ -9,7 +9,7 @@ using IGame;
 
 namespace Tank
 {
-    public abstract class Bullet : IGameObject
+    public abstract class Bullet : ITankGameObject
     {
         protected string type;
         protected Vector pos;
