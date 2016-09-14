@@ -7,7 +7,7 @@ using System.Runtime.Serialization;
 
 namespace IGame
 {
-    interface IGameObject: ISerializable
+    public interface IGameObject: ISerializable
     {
         //Тип объекта
         string Type { get; }

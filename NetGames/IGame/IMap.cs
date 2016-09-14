@@ -7,7 +7,7 @@ using System.Runtime.Serialization;
 
 namespace IGame
 {
-    interface IMap: ISerializable
+    public interface IMap : ISerializable
     {
         //Размер карты
         int X { get; }
