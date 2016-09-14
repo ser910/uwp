@@ -8,13 +8,10 @@ namespace Tank.GameObject
 {
     public class BrickWall : Wall
     {
-
-
         public BrickWall(int X, int Y)
             : base(X, Y)
         {
             this.type = "BrickWall";
-
         }
     }
 }

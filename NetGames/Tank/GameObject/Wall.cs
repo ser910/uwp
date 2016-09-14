@@ -18,12 +18,17 @@ namespace Tank.GameObject
         public int X { get { return x; } }
         public int Y { get { return y; } }
 
+        protected string status;
+        public string Status { get { return status; } }
+
         public Wall(int X, int Y)
         {
             this.type = "Wall";
 
             this.x = X;
             this.y = Y;
+
+            status = "created";
         }
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)

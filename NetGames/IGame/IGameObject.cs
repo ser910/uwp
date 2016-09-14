@@ -15,5 +15,8 @@ namespace IGame
         //Положение объекта на карте
         int X { get; }
         int Y { get; }
+
+        //Статус объекта
+        string Status { get; }
     }
 }
