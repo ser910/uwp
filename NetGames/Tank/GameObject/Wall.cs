@@ -10,23 +10,23 @@ namespace Tank.GameObject
 {
     public abstract class Wall : IGameObject
     {
-        protected string type;
-        public string Type { get { return type; } }
+        protected string _type;
+        public string Type { get { return _type; } }
 
-        protected int x;
-        protected int y;
-        public int X { get { return x; } }
-        public int Y { get { return y; } }
+        protected int _x;
+        protected int _y;
+        public int X { get { return _x; } }
+        public int Y { get { return _y; } }
 
         protected string status;
         public string Status { get { return status; } }
 
         public Wall(int X, int Y)
         {
-            this.type = "Wall";
+            this._type = "Wall";
 
-            this.x = X;
-            this.y = Y;
+            this._x = X;
+            this._y = Y;
 
             status = "created";
         }
