@@ -29,7 +29,8 @@ namespace Tank.Map
 
         public bool AddObject(IGameObject GameObject)
         {
-            if (CollisionInList(GameObject))
+            IGameObject CollisionObject = CollisionInList(GameObject);
+            if (CollisionObject != null && !CollisionObject.Transparante && !GameObject.Transparante)
                 return false;
 
             this._gameObjects.Add(GameObject);
@@ -37,14 +38,14 @@ namespace Tank.Map
             return true;
         }
 
-        private bool CollisionInList(IGameObject GameObject)
+        private IGameObject CollisionInList(IGameObject GameObject)
         {
             foreach(IGameObject GameObjectInList in GameObjects)
             {
                 if (Collision(GameObject, GameObjectInList))
-                    return true;
+                    return GameObjectInList;
             }
-            return false;
+            return null;
         }
 
         private bool Collision(IGameObject first, IGameObject second)
