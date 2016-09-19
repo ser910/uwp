@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SeaBattle
 {
-    public class SeaBattle : IGame;
+    public class SeaBattle : IGame
     {
         public DateTime CheckLastSave()
         {

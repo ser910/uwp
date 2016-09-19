@@ -7,15 +7,12 @@ using Tank.GameObject.Abstract;
 
 namespace Tank.GameObject
 {
-    public class BrickWall : Wall
+    public class ConcreteWall: Wall
     {
-        public BrickWall(int X, int Y)
+        public ConcreteWall(int X, int Y)
             : base(X, Y)
         {
-            this._type = "BrickWall";
-
-            this._canBeDestroyed = true;
-            this._health = 4;
+            this._type = "ConcreteWall";
         }
     }
 }

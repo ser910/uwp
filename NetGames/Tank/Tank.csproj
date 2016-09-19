@@ -42,10 +42,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameObject\ConcreteWall.cs" />
+    <Compile Include="GameObject\Interface\IGameObject.cs" />
     <Compile Include="GameObject\BrickWall.cs" />
-    <Compile Include="GameObject\Bullet.cs" />
-    <Compile Include="GameObject\ITankGameObject.cs" />
-    <Compile Include="GameObject\Wall.cs" />
+    <Compile Include="GameObject\Abstract\GameObject.cs" />
+    <Compile Include="GameObject\Abstract\Wall.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
