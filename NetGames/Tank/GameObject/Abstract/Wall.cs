@@ -10,9 +10,12 @@ namespace Tank.GameObject.Abstract
     public abstract class Wall: GameObject
     {
         public Wall(double X, double Y)
-            :base(X,Y)
+            :base()
         {
             this._type = "Wall";
+
+            this._width = 1;
+            this._height = 1;
 
             this._transparante = false;
         }

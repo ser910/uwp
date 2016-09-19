@@ -47,7 +47,8 @@
     <Compile Include="GameObject\BrickWall.cs" />
     <Compile Include="GameObject\Abstract\GameObject.cs" />
     <Compile Include="GameObject\Abstract\Wall.cs" />
-    <Compile Include="Map.cs" />
+    <Compile Include="Map\Map.cs" />
+    <Compile Include="Map\Interface\IMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -56,6 +57,7 @@
       <Name>IGame</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

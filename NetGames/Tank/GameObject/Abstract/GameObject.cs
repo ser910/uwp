@@ -19,6 +19,11 @@ namespace Tank.GameObject.Abstract
         public double X { get; }
         public double Y { get; }
 
+        protected double _width;
+        protected double _height;
+        public double Width { get { return _width; } }
+        public double Height { get { return _height; } }
+
         protected double _health;
         public double Health { get; }
 
@@ -27,15 +32,20 @@ namespace Tank.GameObject.Abstract
         protected bool _canBeDestroyed;
         public bool CanBeDestroyed { get; }
 
+        public double Left { get { return (X - (Width / 2)); } }
+        public double Right { get { return (X + (Width / 2)); } }
+        public double Top { get { return (Y - (Height / 2)); } }
+        public double Bottom { get { return (Y + (Height / 2)); } }
+
         protected string _status;
         public string Status { get; }
-        
-        public GameObject(double X, double Y)
+
+        public GameObject()
         {
             this._type = "GameObject";
 
-            this._x = X;
-            this._y = Y;
+            this._x = 0;
+            this._y = 0;
 
             this._health = 1;
 
