@@ -3,23 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using IGame;
 
 namespace Tank.GameObject.Abstract
 {
-    public abstract class Wall: GameObject
+    public abstract class Tank: GameObject
     {
-        public Wall(double X, double Y)
+        public Tank(double X, double Y)
         {
-            this._type = "Wall";
+            this._type = "Tank";
 
             this._x = X;
             this._y = Y;
 
-            this._width = 1;
-            this._height = 1;
+            this._health = 1;
 
             this._transparante = false;
+            this._canBeDestroyed = true;
+
+            this._status = "Created";
         }
     }
 }

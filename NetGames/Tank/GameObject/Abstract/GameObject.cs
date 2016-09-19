@@ -27,15 +27,20 @@ namespace Tank.GameObject.Abstract
         protected double _health;
         public double Health { get; }
 
-        protected bool _transparante;
-        public bool Transparante { get; }
-        protected bool _canBeDestroyed;
-        public bool CanBeDestroyed { get; }
+        protected bool _isVisible;
+        public bool IsVisible { get { return _isVisible; } }
+        protected bool _isTransparante;
+        public bool IsTransparante { get { return _isTransparante; } }
+        protected bool _isCanBeDestroyed;
+        public bool IsCanBeDestroyed { get { return _isCanBeDestroyed; } }
 
         public double Left { get { return (X - (Width / 2)); } }
         public double Right { get { return (X + (Width / 2)); } }
         public double Top { get { return (Y - (Height / 2)); } }
         public double Bottom { get { return (Y + (Height / 2)); } }
+
+        protected Direction _direction;
+        public Direction Direction { get { return _direction; } }
 
         protected string _status;
         public string Status { get; }
@@ -49,8 +54,9 @@ namespace Tank.GameObject.Abstract
 
             this._health = 1;
 
-            this._transparante = true;
-            this._canBeDestroyed = false;
+            this._isVisible = true;
+            this._isTransparante = true;
+            this._isCanBeDestroyed = false;
 
             this._status = "Created";
         }
