@@ -12,8 +12,9 @@ namespace Tank.GameObject.Abstract
     public abstract class GameObject : IGameObject
     {
         public Type Type { get { return this.GetType(); } }
-        
-        public string Name { get { return Type.Name; } }
+
+        private string _name;
+        public string Name { get { if (string.IsNullOrEmpty(_name)) { return Type.Name; } else return _name; } }
 
         protected double _x;
         protected double _y;

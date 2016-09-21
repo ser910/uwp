@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Tank.GameObject.Interface;
 using Tank.Map.Interface;
+using Tank.GameObject.Abstract;
 
 namespace Tank.Map
 {
@@ -32,9 +33,8 @@ namespace Tank.Map
         {
             if (!Validation(GameObject))
                 return false;
-
-            IGameObject CollisionObject = CollisionInList(GameObject);
-            if (CollisionObject != null && !CollisionObject.IsTransparante && !GameObject.IsTransparante)
+            
+            if (CollisionInList(GameObject) != null && TransparanteCollision(GameObject, CollisionInList(GameObject)))
                 return false;
 
             this._gameObjects.Add(GameObject);
@@ -42,11 +42,26 @@ namespace Tank.Map
             return true;
         }
 
-        public bool MoveObject(IGameObject GameObject, Direction Direction)
+        public bool MoveTank(Tank.GameObject.Abstract.Tank Tank, Direction Direction)
         {
+            if (!GameObjects.Contains(Tank))
+                return false;
 
+            Tank.Move(Direction);
+
+            if (!Validation(Tank)
+                || (CollisionInList(Tank) != null  && TransparanteCollision(Tank, CollisionInList(Tank))))
+            {
+                MoveBack(Tank, Direction);
+                return false;
+            }
 
             return true;
+        }
+        
+        private void MoveBack(Tank.GameObject.Abstract.Tank Tank, Direction Direction)
+        {
+            Tank.MoveBack(Direction);
         }
 
         private bool Validation(IGameObject GameObject)
@@ -75,6 +90,13 @@ namespace Tank.Map
         {
             if (((first.Right >= second.Left && first.Right <= second.Right) || (first.Left <= second.Right && first.Left >= second.Left))
                 &&((first.Bottom >= second.Top && first.Bottom <= second.Bottom) || (first.Top <= second.Bottom && first.Top >= second.Top)))
+                return true;
+            return false;
+        }
+
+        private bool TransparanteCollision(IGameObject first, IGameObject second)
+        {
+            if (!first.IsTransparante && !second.IsTransparante)
                 return true;
             return false;
         }

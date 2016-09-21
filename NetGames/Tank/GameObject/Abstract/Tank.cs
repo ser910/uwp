@@ -33,7 +33,7 @@ namespace Tank.GameObject.Abstract
             this._speed = 1;
         }
 
-        public bool Move(Direction NewDirection)
+        public void Move(Direction NewDirection)
         {
             this._status = Status.Move;
 
@@ -58,8 +58,31 @@ namespace Tank.GameObject.Abstract
                 default:
                     break;
             }
+        }
 
-            return true;
+        public void MoveBack(Direction NewDirection)
+        {
+            this._direction = NewDirection;
+
+            switch (this.Direction)
+            {
+                case Direction.Top:
+                    this._y += this._speed;
+                    break;
+                case Direction.Bottom:
+                    this._y -= this._speed;
+                    break;
+                case Direction.Left:
+                    this._x += this._speed;
+                    break;
+                case Direction.Right:
+                    this._x -= this._speed;
+                    break;
+                case Direction.Center:
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
