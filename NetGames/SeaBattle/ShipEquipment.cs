@@ -6,7 +6,64 @@ using System.Threading.Tasks;
 
 namespace SeaBattle
 {
-    class ShipEquipment: ISeaBattleGameObject
+    class ShipEquipment : ISeaBattleGameObject
     {
+        public string Name
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string Status
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public Type Type
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public double Weight
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public int X
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public int Y
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }

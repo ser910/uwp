@@ -22,7 +22,7 @@ namespace SeaBattle
         {
 
         }
-        public Ship(Ship ship, Dictionary<string, int> ammo)
+        public Ship(Ship ship, Dictionary<Ammo, int> ammo)
         {
 
         }
