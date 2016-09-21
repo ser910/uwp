@@ -25,7 +25,7 @@ namespace Tank.GameObject.Abstract
 
             this._direction = Direction.Center;
 
-            this._status = "Created";
+            this._status = Status.Created;
         }
     }
 }

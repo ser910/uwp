@@ -9,6 +9,9 @@ namespace Tank.GameObject.Abstract
 {
     public abstract class Tank: GameObject
     {
+        protected double _speed;
+        public double Speed { get { return _speed; } }
+
         public Tank(double X, double Y)
         {
             this._x = X;
@@ -25,7 +28,38 @@ namespace Tank.GameObject.Abstract
 
             this._direction = Direction.Center;
 
-            this._status = "Created";
+            this._status = Status.Created;
+
+            this._speed = 1;
+        }
+
+        public bool Move(Direction NewDirection)
+        {
+            this._status = Status.Move;
+
+            this._direction = NewDirection;
+
+            switch (this.Direction)
+            {
+                case Direction.Top:
+                    this._y -= this._speed;
+                    break;
+                case Direction.Bottom:
+                    this._y += this._speed;
+                    break;
+                case Direction.Left:
+                    this._x -= this._speed;
+                    break;
+                case Direction.Right:
+                    this._x += this._speed;
+                    break;
+                case Direction.Center:
+                    break;
+                default:
+                    break;
+            }
+
+            return true;
         }
     }
 }

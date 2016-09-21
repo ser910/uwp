@@ -27,13 +27,36 @@ namespace Tank.Map
             this._gameObjects = new List<IGameObject>();
         }
 
+
         public bool AddObject(IGameObject GameObject)
         {
+            if (!Validation(GameObject))
+                return false;
+
             IGameObject CollisionObject = CollisionInList(GameObject);
             if (CollisionObject != null && !CollisionObject.IsTransparante && !GameObject.IsTransparante)
                 return false;
 
             this._gameObjects.Add(GameObject);
+
+            return true;
+        }
+
+        public bool MoveObject(IGameObject GameObject, Direction Direction)
+        {
+
+
+            return true;
+        }
+
+        private bool Validation(IGameObject GameObject)
+        {
+            if (GameObject == null)
+                return false;
+
+            if (GameObject.X <= 0 || GameObject.X > this.Width
+                || GameObject.Y <= 0 || GameObject.Y > this.Height)
+                return false;
 
             return true;
         }

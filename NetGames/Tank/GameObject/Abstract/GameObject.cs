@@ -43,8 +43,8 @@ namespace Tank.GameObject.Abstract
         protected Direction _direction;
         public Direction Direction { get { return _direction; } }
 
-        protected string _status;
-        public string Status { get { return _status; } }
+        protected Status _status;
+        public Status Status { get { return _status; } }
 
         public GameObject()
         {
@@ -62,7 +62,7 @@ namespace Tank.GameObject.Abstract
 
             this._direction = Direction.Center;
 
-            this._status = "Created";
+            this._status = Status.Created;
         }
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)
