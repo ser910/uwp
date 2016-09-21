@@ -10,26 +10,11 @@ namespace Tank.GameObject
     {
         protected double _speed;
         public double Speed { get { return _speed; } }
-
-        public Tank(double X, double Y)
+        
+        public Tank(double X, double Y, double Width = 1, double Height = 1, double Health = 1, bool IsVisible = true, bool IsTransparante = false, bool IsCanBeDestroyed = true, Direction Direction = Direction.Center, double Speed = 1)
+            :base(X,Y,Width,Health,Health,IsVisible,IsTransparante,IsCanBeDestroyed,Direction)
         {
-            this._x = X;
-            this._y = Y;
-
-            this._width = 1;
-            this._height = 1;
-
-            this._health = 1;
-
-            this._isVisible = true;
-            this._isTransparante = false;
-            this._isCanBeDestroyed = true;
-
-            this._direction = Direction.Center;
-
-            this._status = Status.Created;
-
-            this._speed = 1;
+            this._speed = Speed;
         }
 
         public void Move(Direction NewDirection)

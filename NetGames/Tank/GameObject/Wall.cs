@@ -8,23 +8,10 @@ namespace Tank.GameObject
 {
     public class Wall: GameObject
     {
-        public Wall(double X, double Y)
+        public Wall(double X, double Y, double Width = 1, double Height = 1, double Health = 1, bool IsVisible = true, bool IsTransparante = false, bool IsCanBeDestroyed = false, Direction Direction = Direction.Center)
+            :base(X,Y,Width,Health,Health,IsVisible,IsTransparante,IsCanBeDestroyed,Direction)
         {
-            this._x = X;
-            this._y = Y;
 
-            this._width = 1;
-            this._height = 1;
-
-            this._health = 1;
-
-            this._isVisible = true;
-            this._isTransparante = false;
-            this._isCanBeDestroyed = false;
-
-            this._direction = Direction.Center;
-
-            this._status = Status.Created;
         }
     }
 }

@@ -46,21 +46,21 @@ namespace Tank.GameObject
         protected Status _status;
         public Status Status { get { return _status; } }
 
-        public GameObject()
+        public GameObject(double X, double Y, double Width = 1, double Height = 1, double Health = 1, bool IsVisible = true, bool IsTransparante = false, bool IsCanBeDestroyed = false, Direction Direction = Direction.Center)
         {
-            this._x = 0;
-            this._y = 0;
+            this._x = X;
+            this._y = Y;
 
-            this._width = 1;
-            this._height = 1;
+            this._width = Width;
+            this._height = Height;
 
-            this._health = 1;
+            this._health = Health;
 
-            this._isVisible = true;
-            this._isTransparante = true;
-            this._isCanBeDestroyed = false;
+            this._isVisible = IsVisible;
+            this._isTransparante = IsTransparante;
+            this._isCanBeDestroyed = IsCanBeDestroyed;
 
-            this._direction = Direction.Center;
+            this._direction = Direction;
 
             this._status = Status.Created;
         }
