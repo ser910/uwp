@@ -97,12 +97,12 @@ namespace SeaBattle
             }
         }
 
-        string IGameObject.Type
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
+        //string IGameObject.Type
+        //{
+        //    get
+        //    {
+        //        throw new NotImplementedException();
+        //    }
+        //}
     }
 }
