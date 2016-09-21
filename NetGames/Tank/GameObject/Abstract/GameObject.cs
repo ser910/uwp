@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
 using Tank.GameObject.Interface;
+using IGame;
 
 namespace Tank.GameObject.Abstract
 {
@@ -12,7 +13,7 @@ namespace Tank.GameObject.Abstract
     public abstract class GameObject : IGameObject
     {
         protected string _type;
-        public string Type { get; }
+        public Type Type { get; }
 
         protected double _x;
         protected double _y;

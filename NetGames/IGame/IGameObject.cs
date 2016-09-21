@@ -9,14 +9,18 @@ namespace IGame
 {
     public interface IGameObject: ISerializable
     {
-        //Тип объекта
-        string Type { get; }
+        //ser910 21.09.16
+        //Тип объекта возвращаем не строку с именем класса а конкретный тип класса.
+        //например в классе BrickWall свойство Type возвращает typeof(BrickWall)
+        //потом из коллекции List<IGameObject> ,будет проще получить конкретный объект
+        Type Type { get; }
 
         //Положение объекта на карте
-        int X { get; }
-        int Y { get; }
+        double X { get; }
+        double Y { get; }
 
         //Статус объекта
         string Status { get; }
+
     }
 }

@@ -10,7 +10,7 @@ namespace SeaBattle
     public interface IGameObject: ISerializable
     {
         //Тип объекта
-        string Type { get; }
+        Type Type { get; }
 
         //Положение объекта на карте
         int X { get; }
@@ -19,7 +19,5 @@ namespace SeaBattle
         //Статус объекта
         string Status { get; }
 
-        //Проходимость объекта другими объектами
-        bool Transparante { get; }
     }
 }
