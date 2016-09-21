@@ -4,9 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
-using Tank.GameObject.Interface;
-using Tank.Map.Interface;
-using Tank.GameObject.Abstract;
+using Tank.GameObject;
 
 namespace Tank.Map
 {
@@ -42,7 +40,7 @@ namespace Tank.Map
             return true;
         }
 
-        public bool MoveTank(Tank.GameObject.Abstract.Tank Tank, Direction Direction)
+        public bool MoveTank(Tank.GameObject.Tank Tank, Direction Direction)
         {
             if (!GameObjects.Contains(Tank))
                 return false;
@@ -59,7 +57,7 @@ namespace Tank.Map
             return true;
         }
         
-        private void MoveBack(Tank.GameObject.Abstract.Tank Tank, Direction Direction)
+        private void MoveBack(Tank.GameObject.Tank Tank, Direction Direction)
         {
             Tank.MoveBack(Direction);
         }

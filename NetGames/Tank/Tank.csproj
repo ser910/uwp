@@ -40,13 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameObject\Abstract\GameObject.cs" />
-    <Compile Include="GameObject\Abstract\Tank.cs" />
-    <Compile Include="GameObject\Abstract\Wall.cs" />
-    <Compile Include="GameObject\BrickWall.cs" />
-    <Compile Include="GameObject\ConcreteWall.cs" />
-    <Compile Include="GameObject\Interface\IGameObject.cs" />
-    <Compile Include="Map\Interface\IMap.cs" />
+    <Compile Include="GameObject\Base\GameObject.cs" />
+    <Compile Include="GameObject\Tank.cs" />
+    <Compile Include="GameObject\Wall.cs" />
+    <Compile Include="GameObject\Base\IGameObject.cs" />
+    <Compile Include="Map\IMap.cs" />
     <Compile Include="Map\Map.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

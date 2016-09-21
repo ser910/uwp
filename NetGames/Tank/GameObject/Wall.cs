@@ -3,15 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tank.GameObject.Abstract;
-using Tank.GameObject.Interface;
 
 namespace Tank.GameObject
 {
-    public class BrickWall : Wall
+    public class Wall: GameObject
     {
-        public BrickWall(int X, int Y)
-            : base(X, Y)
+        public Wall(double X, double Y)
         {
             this._x = X;
             this._y = Y;
@@ -19,11 +16,11 @@ namespace Tank.GameObject
             this._width = 1;
             this._height = 1;
 
-            this._health = 4;
+            this._health = 1;
 
             this._isVisible = true;
             this._isTransparante = false;
-            this._isCanBeDestroyed = true;
+            this._isCanBeDestroyed = false;
 
             this._direction = Direction.Center;
 

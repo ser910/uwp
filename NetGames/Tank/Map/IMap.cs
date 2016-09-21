@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
-using Tank.GameObject.Interface;
+using Tank.GameObject;
 
-namespace Tank.Map.Interface
+namespace Tank.Map
 {
     public interface IMap : ISerializable
     {

@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
-using Tank.GameObject.Interface;
 
-namespace Tank.GameObject.Abstract
+namespace Tank.GameObject
 {
 
     public abstract class GameObject : IGameObject

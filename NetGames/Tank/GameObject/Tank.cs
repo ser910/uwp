@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tank.GameObject.Interface;
 
-namespace Tank.GameObject.Abstract
+namespace Tank.GameObject
 {
-    public abstract class Tank: GameObject
+    public class Tank: GameObject
     {
         protected double _speed;
         public double Speed { get { return _speed; } }

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
 
-namespace Tank.GameObject.Interface
+namespace Tank.GameObject
 {
 
     public enum Direction { Top, Bottom, Left, Right, Center }
