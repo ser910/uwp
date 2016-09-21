@@ -12,7 +12,9 @@ namespace Tank.GameObject.Interface
 
     public interface IGameObject: ISerializable
     {
-        string Type { get; }
+        Type Type { get; }
+
+        string Name { get; }
         
         double X { get; }
         double Y { get; }

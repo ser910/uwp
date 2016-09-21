@@ -46,8 +46,8 @@
     <Compile Include="GameObject\BrickWall.cs" />
     <Compile Include="GameObject\ConcreteWall.cs" />
     <Compile Include="GameObject\Interface\IGameObject.cs" />
-    <Compile Include="GameObject\Map\Interface\IMap.cs" />
-    <Compile Include="GameObject\Map\Map.cs" />
+    <Compile Include="Map\Interface\IMap.cs" />
+    <Compile Include="Map\Map.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -11,8 +11,6 @@ namespace Tank.GameObject.Abstract
     {
         public Tank(double X, double Y)
         {
-            this._type = "Tank";
-
             this._x = X;
             this._y = Y;
 

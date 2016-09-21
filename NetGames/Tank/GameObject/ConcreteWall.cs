@@ -13,8 +13,6 @@ namespace Tank.GameObject
         public ConcreteWall(int X, int Y)
             : base(X, Y)
         {
-            this._type = "ConcreteWall";
-
             this._x = X;
             this._y = Y;
 

@@ -13,8 +13,6 @@ namespace Tank.GameObject
         public BrickWall(int X, int Y)
             : base(X, Y)
         {
-            this._type = "BrickWall";
-
             this._x = X;
             this._y = Y;
 
