@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Tank.GameObject
 {
-    public class Wall: GameObject
+    public class Wall : GameObject
     {
-        public Wall(double X, double Y, double Width = 1, double Height = 1, double Health = 1, bool IsVisible = true, bool IsTransparante = false, bool IsCanBeDestroyed = false, Direction Direction = Direction.Center)
-            :base(X,Y,Width,Health,Health,IsVisible,IsTransparante,IsCanBeDestroyed,Direction)
+        public Wall(double X, double Y, bool IsCanBeDestroyed = false, double Health = 1, double Width = 1, double Height = 1,  bool IsVisible = true, bool IsTransparante = false, Direction Direction = Direction.Center)
+            : base(X, Y, Width, Health, Health, IsVisible, IsTransparante, IsCanBeDestroyed, Direction)
         {
 
         }

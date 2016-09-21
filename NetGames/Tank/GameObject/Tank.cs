@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Tank.GameObject
 {
-    public class Tank: GameObject
+    public class Tank : GameObject
     {
         protected double _speed;
         public double Speed { get { return _speed; } }
-        
-        public Tank(double X, double Y, double Width = 1, double Height = 1, double Health = 1, bool IsVisible = true, bool IsTransparante = false, bool IsCanBeDestroyed = true, Direction Direction = Direction.Center, double Speed = 1)
-            :base(X,Y,Width,Health,Health,IsVisible,IsTransparante,IsCanBeDestroyed,Direction)
+
+        public Tank(double X, double Y, double Speed = 1, double Health = 1, Direction Direction = Direction.Center, double Width = 1, double Height = 1, bool IsVisible = true, bool IsTransparante = false, bool IsCanBeDestroyed = true)
+            : base(X, Y, Width, Health, Health, IsVisible, IsTransparante, IsCanBeDestroyed, Direction)
         {
             this._speed = Speed;
         }
@@ -68,5 +68,11 @@ namespace Tank.GameObject
                     break;
             }
         }
+
+        public Bullet Shot()
+        {
+            return new Bullet(this.X, this.Y, this.Direction);
+        }
+
     }
 }

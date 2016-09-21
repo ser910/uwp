@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GameObject\Base\GameObject.cs" />
+    <Compile Include="GameObject\Bullet.cs" />
+    <Compile Include="GameObject\Player.cs" />
     <Compile Include="GameObject\Tank.cs" />
     <Compile Include="GameObject\Wall.cs" />
     <Compile Include="GameObject\Base\IGameObject.cs" />
