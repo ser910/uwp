@@ -20,7 +20,12 @@ namespace IGame
         double Y { get; }
 
         //Статус объекта
+        /// <summary>
+        /// bla bla
+        /// </summary>
         string Status { get; }
+
+
 
     }
 }

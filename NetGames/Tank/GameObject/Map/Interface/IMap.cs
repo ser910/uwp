@@ -10,10 +10,8 @@ namespace Tank.Map.Interface
 {
     public interface IMap : ISerializable
     {
-        //Коллекция объектов на карте
         List<IGameObject> GameObjects { get; }
-
-        //Ширина и высота карты
+        
         double Width { get; }
         double Height { get; }
     }

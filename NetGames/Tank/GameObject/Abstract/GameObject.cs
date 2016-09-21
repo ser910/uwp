@@ -5,20 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
 using Tank.GameObject.Interface;
-using IGame;
 
 namespace Tank.GameObject.Abstract
 {
 
     public abstract class GameObject : IGameObject
     {
-        protected Type _type;
-        public Type Type { get; }
+        protected string _type;
+        public string Type { get { return _type; } }
 
         protected double _x;
         protected double _y;
-        public double X { get; }
-        public double Y { get; }
+        public double X { get { return _x; } }
+        public double Y { get { return _y; } }
 
         protected double _width;
         protected double _height;
@@ -26,7 +25,7 @@ namespace Tank.GameObject.Abstract
         public double Height { get { return _height; } }
 
         protected double _health;
-        public double Health { get; }
+        public double Health { get { return _health; } }
 
         protected bool _isVisible;
         public bool IsVisible { get { return _isVisible; } }
@@ -44,20 +43,25 @@ namespace Tank.GameObject.Abstract
         public Direction Direction { get { return _direction; } }
 
         protected string _status;
-        public string Status { get; }
+        public string Status { get { return _status; } }
 
         public GameObject()
         {
-            this._type = typeof(GameObject);
+            this._type = "GameObject";
 
             this._x = 0;
             this._y = 0;
+
+            this._width = 1;
+            this._height = 1;
 
             this._health = 1;
 
             this._isVisible = true;
             this._isTransparante = true;
             this._isCanBeDestroyed = false;
+
+            this._direction = Direction.Center;
 
             this._status = "Created";
         }

@@ -30,7 +30,7 @@ namespace Tank.Map
         public bool AddObject(IGameObject GameObject)
         {
             IGameObject CollisionObject = CollisionInList(GameObject);
-            if (CollisionObject != null && !CollisionObject.Transparante && !GameObject.Transparante)
+            if (CollisionObject != null && !CollisionObject.IsTransparante && !GameObject.IsTransparante)
                 return false;
 
             this._gameObjects.Add(GameObject);
