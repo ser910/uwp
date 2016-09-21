@@ -10,6 +10,8 @@ namespace Tank.GameObject.Interface
 
     public enum Direction { Top, Bottom, Left, Right, Center }
 
+    public enum Status { Created, Deleted, Stay, Move, Shot, Wounded, Healed }
+
     public interface IGameObject: ISerializable
     {
         Type Type { get; }
@@ -35,6 +37,6 @@ namespace Tank.GameObject.Interface
         
         Direction Direction { get; }
         
-        string Status { get; }
+        Status Status { get; }
     }
 }
