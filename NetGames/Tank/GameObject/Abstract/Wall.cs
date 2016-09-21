@@ -11,7 +11,7 @@ namespace Tank.GameObject.Abstract
     {
         public Wall(double X, double Y)
         {
-            this._type = "Wall";
+            this._type = typeof(Wall);
 
             this._x = X;
             this._y = Y;

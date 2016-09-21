@@ -12,7 +12,7 @@ namespace Tank.GameObject
         public ConcreteWall(int X, int Y)
             : base(X, Y)
         {
-            this._type = "ConcreteWall";
+            this._type = typeof(ConcreteWall);
         }
     }
 }

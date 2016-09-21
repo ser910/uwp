@@ -12,7 +12,7 @@ namespace Tank.GameObject.Abstract
 
     public abstract class GameObject : IGameObject
     {
-        protected string _type;
+        protected Type _type;
         public Type Type { get; }
 
         protected double _x;
@@ -48,7 +48,7 @@ namespace Tank.GameObject.Abstract
 
         public GameObject()
         {
-            this._type = "GameObject";
+            this._type = typeof(GameObject);
 
             this._x = 0;
             this._y = 0;
