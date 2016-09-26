@@ -4,24 +4,14 @@ namespace SeaBattle
 {
     public class Gun : ShipEquipment, ISeaBattleGameObject
     {
-        public string Name
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
 
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+        public Gun(string name):base(name) { }
 
         public string Status
         {
             get
             {
-                throw new NotImplementedException();
+                return status;
             }
         }
 
@@ -29,21 +19,11 @@ namespace SeaBattle
         {
             get
             {
-                throw new NotImplementedException();
+                return typeof(Gun);
             }
         }
 
-        public double Weight
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
 
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
+
     }
 }

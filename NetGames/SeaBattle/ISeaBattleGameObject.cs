@@ -9,6 +9,6 @@ namespace SeaBattle
     public interface ISeaBattleGameObject: IGameObject
     {
         double Weight { get; set; }
-        string Name { get; set; }
+        string Name { get; }
     }
 }
