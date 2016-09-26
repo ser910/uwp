@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SeaBattle
 {
-    public class Ammo : ShipEquipment, ISeaBattleGameObject
+    public class Gun : ShipEquipment, ISeaBattleGameObject
     {
         public string Name
         {
@@ -49,6 +45,5 @@ namespace SeaBattle
                 throw new NotImplementedException();
             }
         }
-
     }
 }

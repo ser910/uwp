@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SeaBattle
 {
-    public class Ammo : ShipEquipment, ISeaBattleGameObject
+    public class Crew : ShipEquipment, ISeaBattleGameObject
     {
         public string Name
         {
@@ -49,6 +49,5 @@ namespace SeaBattle
                 throw new NotImplementedException();
             }
         }
-
     }
 }
