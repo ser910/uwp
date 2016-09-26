@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TankGame.Map;
 
-namespace Tank.GameObject
+namespace TankGame.GameObject
 {
     public class Tank : GameObject
     {
         protected double _speed;
         public double Speed { get { return _speed; } }
 
-        public Tank(double X, double Y, double Speed = 1, double Health = 1, Direction Direction = Direction.Center, double Width = 1, double Height = 1, bool IsVisible = true, bool IsTransparante = false, bool IsCanBeDestroyed = true)
-            : base(X, Y, Width, Health, Health, IsVisible, IsTransparante, IsCanBeDestroyed, Direction)
+        public Tank(double X, double Y, double Speed = 1, double Health = 1, Direction Direction = Direction.Non, bool IsAI = false, double Width = 1, double Height = 1, bool IsVisible = true, bool IsTransparante = false, bool IsCanBeDestroyed = true)
+            : base(X, Y, Width, Health, Health, IsVisible, IsTransparante, IsCanBeDestroyed, IsAI, Direction)
         {
             this._speed = Speed;
         }
@@ -37,7 +38,7 @@ namespace Tank.GameObject
                 case Direction.Right:
                     this._x += this._speed;
                     break;
-                case Direction.Center:
+                case Direction.Non:
                     break;
                 default:
                     break;
@@ -62,11 +63,16 @@ namespace Tank.GameObject
                 case Direction.Right:
                     this._x -= this._speed;
                     break;
-                case Direction.Center:
+                case Direction.Non:
                     break;
                 default:
                     break;
             }
+        }
+
+        public void AIMove(Map.Map Map)
+        {
+
         }
 
         public Bullet Shot()

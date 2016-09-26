@@ -4,17 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
-using Tank.Map;
-using Tank.GameObject;
+using TankGame.Map;
+using TankGame.GameObject;
 
-namespace Tank
+namespace TankGame
 {
     class Game : ISerializable
     {
-        private IMap _currentMap;
-        public IMap CurrentMap { get { return _currentMap; } }
+        private Map.Map _currentMap;
+        public Map.Map CurrentMap { get { return _currentMap; } }
 
-        public IMap Play()
+        private Tank _player;
+        public Tank Player { get { return _player; } }
+
+        public Game()
+        {
+
+        }
+
+        public Map.Map Play(Direction Direction)
         {
             return CurrentMap;
         }

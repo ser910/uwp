@@ -46,7 +46,6 @@
     <Compile Include="GameObject\Tank.cs" />
     <Compile Include="GameObject\Wall.cs" />
     <Compile Include="GameObject\Base\IGameObject.cs" />
-    <Compile Include="Map\IMap.cs" />
     <Compile Include="Map\Map.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

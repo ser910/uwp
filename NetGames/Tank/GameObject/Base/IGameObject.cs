@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
 
-namespace Tank.GameObject
+namespace TankGame.GameObject
 {
 
-    public enum Direction { Top, Bottom, Left, Right, Center }
+    public enum Direction { Top, Bottom, Left, Right, Non }
 
     public enum Status { Created, Deleted, Stay, Move, Shot, Wounded, Healed }
 
@@ -29,6 +29,7 @@ namespace Tank.GameObject
         bool IsVisible { get; }
         bool IsTransparante { get; }
         bool IsCanBeDestroyed { get; }
+        bool IsAI { get; }
 
         double Left { get; }
         double Right { get; }

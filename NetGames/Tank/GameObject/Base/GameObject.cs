@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
 
-namespace Tank.GameObject
+namespace TankGame.GameObject
 {
 
     public abstract class GameObject : IGameObject
@@ -34,6 +34,8 @@ namespace Tank.GameObject
         public bool IsTransparante { get { return _isTransparante; } }
         protected bool _isCanBeDestroyed;
         public bool IsCanBeDestroyed { get { return _isCanBeDestroyed; } }
+        protected bool _isAI;
+        public bool IsAI { get { return _isAI; } }
 
         public double Left { get { return (X - (Width / 2)); } }
         public double Right { get { return (X + (Width / 2)); } }
@@ -46,7 +48,7 @@ namespace Tank.GameObject
         protected Status _status;
         public Status Status { get { return _status; } }
 
-        public GameObject(double X, double Y, double Width = 1, double Height = 1, double Health = 1, bool IsVisible = true, bool IsTransparante = false, bool IsCanBeDestroyed = false, Direction Direction = Direction.Center)
+        public GameObject(double X, double Y, double Width = 1, double Height = 1, double Health = 1, bool IsVisible = true, bool IsTransparante = false, bool IsCanBeDestroyed = false, bool IsAI = false, Direction Direction = Direction.Non)
         {
             this._x = X;
             this._y = Y;
@@ -59,6 +61,7 @@ namespace Tank.GameObject
             this._isVisible = IsVisible;
             this._isTransparante = IsTransparante;
             this._isCanBeDestroyed = IsCanBeDestroyed;
+            this._isAI = IsAI;
 
             this._direction = Direction;
 
