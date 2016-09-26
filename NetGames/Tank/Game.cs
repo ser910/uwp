@@ -9,7 +9,7 @@ using TankGame.GameObject;
 
 namespace TankGame
 {
-    class Game : ISerializable
+    public class Game : ISerializable
     {
         private List<Map.Map> _maps;
         public List<Map.Map> Maps { get { return _maps; } }
