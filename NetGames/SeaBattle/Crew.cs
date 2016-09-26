@@ -10,14 +10,6 @@ namespace SeaBattle
     {
         public Crew(string name):base(name) { }
 
-        public string Status
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
         public Type Type
         {
             get

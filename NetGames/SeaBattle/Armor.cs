@@ -6,16 +6,18 @@ using System.Threading.Tasks;
 
 namespace SeaBattle
 {
-    public class Ammo : ShipEquipment, ISeaBattleGameObject
+    public class Armor : ShipEquipment, ISeaBattleGameObject
     {
-        public Ammo(string name):base(name) { }
+        public Armor(string name):base(name) { }
 
         public Type Type
         {
             get
             {
-                return typeof(Ammo);
+                return typeof(Armor);
             }
         }
+        public double Durability { get { return _hp; } }
+
     }
 }

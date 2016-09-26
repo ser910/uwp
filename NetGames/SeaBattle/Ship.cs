@@ -11,18 +11,19 @@ namespace SeaBattle
         private Dictionary<Crew, int> crew;
         private Dictionary<Ammo, int> ammo;
         private Dictionary<Gun, int> guns;
-        private int durability;
+        private Armor armor;
         private string status;
         private string name;
         private double weight;
-        private int x;
-        private int y;
+        private int dimention;
+        private int x = int.MinValue;
+        private int y = int.MinValue;
 
         public Ship(int name, int dimenshion)
         {
 
         }
-
+        
         public string Status
         {
             get
@@ -85,18 +86,42 @@ namespace SeaBattle
         {
             get
             {
-                throw new NotImplementedException();
+                return name;
             }
 
             set
             {
-                throw new NotImplementedException();
+                if(checkName(value))
+                    name = value;
             }
+        }
+        /// <summary>
+        /// check new name
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>true if new name, false existing name</returns>
+        private bool checkName(string value)
+        {
+            return false;
         }
 
         private double CalcWeight()
         {
-            throw new NotImplementedException();
+            double weight = 0;
+            ammo.AsParallel().ForAll((a) => 
+            {
+                weight += a.Key.Weight*a.Value;
+            });
+            crew.AsParallel().ForAll((c) =>
+            {
+                weight += c.Key.Weight*c.Value;
+            });
+            guns.AsParallel().ForAll((g) =>
+            {
+                weight += g.Key.Weight * g.Value;
+            });
+            weight += armor.Weight;
+            return weight;
         }
     }
 }

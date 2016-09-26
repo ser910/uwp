@@ -7,14 +7,6 @@ namespace SeaBattle
 
         public Gun(string name):base(name) { }
 
-        public string Status
-        {
-            get
-            {
-                return status;
-            }
-        }
-
         public Type Type
         {
             get
@@ -22,8 +14,6 @@ namespace SeaBattle
                 return typeof(Gun);
             }
         }
-
-
 
     }
 }

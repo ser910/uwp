@@ -12,7 +12,7 @@ namespace SeaBattle
         protected string status;
         protected string name;
         protected double weight;
-
+        protected double _hp;
         public ShipEquipment(string name)
         {
             this.name = name;
@@ -39,6 +39,26 @@ namespace SeaBattle
             }
 
         }
+
+        public string Status
+        {
+            get
+            {
+                return status;
+            }
+        }
+
+        public void Damaged(double value)
+        {
+            _hp = -value;
+            if (_hp >= 0)
+                status = "dammaged";
+            else
+            {
+                status = "destroyed";
+                _hp = 0;
+            }
+        }
         public int X
         {
             get
@@ -54,9 +74,14 @@ namespace SeaBattle
                 return int.MinValue;
             }
         }
-
+        /// <summary>
+        /// get parameter weight from dictionaty by name 
+        /// os dependeble;
+        /// </summary>
+        /// <param name="name"></param>
         private void GetParams(string name)
         {
+            status = "new";
             throw new NotImplementedException();
         }
     }
