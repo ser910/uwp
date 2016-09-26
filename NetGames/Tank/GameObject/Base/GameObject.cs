@@ -34,8 +34,13 @@ namespace TankGame.GameObject
         public bool IsTransparante { get { return _isTransparante; } }
         protected bool _isCanBeDestroyed;
         public bool IsCanBeDestroyed { get { return _isCanBeDestroyed; } }
+
+        protected bool _isMove;
+        public bool IsMove { get { return _isMove; } }
         protected bool _isAI;
         public bool IsAI { get { return _isAI; } }
+        protected bool _isPlayer;
+        public bool IsPlayer { get { return _isPlayer; } }
 
         public double Left { get { return (X - (Width / 2)); } }
         public double Right { get { return (X + (Width / 2)); } }
@@ -48,7 +53,7 @@ namespace TankGame.GameObject
         protected Status _status;
         public Status Status { get { return _status; } }
 
-        public GameObject(double X, double Y, double Width = 1, double Height = 1, double Health = 1, bool IsVisible = true, bool IsTransparante = false, bool IsCanBeDestroyed = false, bool IsAI = false, Direction Direction = Direction.Non)
+        public GameObject(double X, double Y, double Width = 1, double Height = 1, double Health = 1, bool IsVisible = true, bool IsTransparante = false, bool IsCanBeDestroyed = false, bool IsMove = false, bool IsAI = false, bool IsPlayer = false, Direction Direction = Direction.Non)
         {
             this._x = X;
             this._y = Y;
@@ -61,7 +66,10 @@ namespace TankGame.GameObject
             this._isVisible = IsVisible;
             this._isTransparante = IsTransparante;
             this._isCanBeDestroyed = IsCanBeDestroyed;
+
+            this._isMove = IsMove;
             this._isAI = IsAI;
+            this._isPlayer = IsPlayer;
 
             this._direction = Direction;
 

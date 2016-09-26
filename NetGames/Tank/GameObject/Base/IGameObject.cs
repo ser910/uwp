@@ -29,7 +29,10 @@ namespace TankGame.GameObject
         bool IsVisible { get; }
         bool IsTransparante { get; }
         bool IsCanBeDestroyed { get; }
+
+        bool IsMove { get; }
         bool IsAI { get; }
+        bool IsPlayer { get; }
 
         double Left { get; }
         double Right { get; }

@@ -26,7 +26,6 @@ namespace TankGame.Map
             this._gameObjects = new List<IGameObject>();
         }
 
-
         public bool AddObject(IGameObject GameObject)
         {
             if (!Validation(GameObject))

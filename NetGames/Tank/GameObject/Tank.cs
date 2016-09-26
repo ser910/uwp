@@ -12,8 +12,8 @@ namespace TankGame.GameObject
         protected double _speed;
         public double Speed { get { return _speed; } }
 
-        public Tank(double X, double Y, double Speed = 1, double Health = 1, Direction Direction = Direction.Non, bool IsAI = false, double Width = 1, double Height = 1, bool IsVisible = true, bool IsTransparante = false, bool IsCanBeDestroyed = true)
-            : base(X, Y, Width, Health, Health, IsVisible, IsTransparante, IsCanBeDestroyed, IsAI, Direction)
+        public Tank(double X, double Y, double Speed = 1, double Health = 1, Direction Direction = Direction.Non, bool IsAI = false, bool IsPlayer = false, double Width = 1, double Height = 1, bool IsMove = true, bool IsVisible = true, bool IsTransparante = false, bool IsCanBeDestroyed = true)
+            : base(X, Y, Width, Health, Health, IsVisible, IsTransparante, IsCanBeDestroyed, IsMove, IsAI, IsPlayer, Direction)
         {
             this._speed = Speed;
         }

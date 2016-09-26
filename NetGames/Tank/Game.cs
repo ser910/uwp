@@ -11,6 +11,9 @@ namespace TankGame
 {
     class Game : ISerializable
     {
+        private List<Map.Map> _maps;
+        public List<Map.Map> Maps { get { return _maps; } }
+
         private Map.Map _currentMap;
         public Map.Map CurrentMap { get { return _currentMap; } }
 
@@ -24,8 +27,54 @@ namespace TankGame
 
         public Map.Map Play(Direction Direction)
         {
+            foreach (var GameObject in _currentMap.GameObjects)
+            {
+                if (GameObject.Type is Tank && GameObject.IsMove)
+                {
+                    if (GameObject.IsPlayer)
+                    {
+                        _currentMap.MoveTank((Tank)GameObject, Direction);
+                    }
+                    else if (GameObject.IsAI)
+                    {
+                        ((Tank)GameObject).AIMove(CurrentMap);
+                    }
+                }
+                else if (GameObject.Type is Bullet && GameObject.IsMove)
+                {
+                    ((Bullet)GameObject).Move();
+                }
+            }
+
             return CurrentMap;
         }
+
+        public bool AddMap(Map.Map Map)
+        {
+            if (!ValidationMap(Map))
+                return false;
+
+            if (_maps == null)
+            {
+                _maps = new List<TankGame.Map.Map>();
+            }
+
+            _maps.Add(Map);
+
+            if (_currentMap == null)
+                _currentMap = _maps.FirstOrDefault();
+
+            return true;
+        }
+
+        private bool ValidationMap(Map.Map Map)
+        {
+            if (Map == null || Map.Width < 0 || Map.Height < 0)
+                return false;
+
+            return true;
+        }
+
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
