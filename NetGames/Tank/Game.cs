@@ -11,6 +11,9 @@ namespace TankGame
 {
     class Game : ISerializable
     {
+        private List<Map.Map> _maps;
+        public List<Map.Map> Maps { get { return _maps; } }
+
         private Map.Map _currentMap;
         public Map.Map CurrentMap { get { return _currentMap; } }
 
@@ -18,6 +21,11 @@ namespace TankGame
         public Tank Player { get { return _player; } }
 
         public Game()
+        {
+
+        }
+
+        public void AddMap(Map.Map Map)
         {
 
         }
