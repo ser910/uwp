@@ -8,19 +8,7 @@ namespace SeaBattle
 {
     public class Ammo : ShipEquipment, ISeaBattleGameObject
     {
-        public string Name
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
+        public Ammo(string name):base(name) { }
         public string Status
         {
             get
@@ -33,22 +21,8 @@ namespace SeaBattle
         {
             get
             {
-                throw new NotImplementedException();
+                return typeof(Ammo);
             }
         }
-
-        public double Weight
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
-            }
-        }
-
     }
 }

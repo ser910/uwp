@@ -12,7 +12,6 @@ namespace SeaBattle
         private Dictionary<Ammo, int> ammo;
         private Dictionary<Gun, int> guns;
         private int durability;
-        private int GunsSpeed;
         private string status;
         private string name;
         private double weight;
@@ -23,10 +22,7 @@ namespace SeaBattle
         {
 
         }
-        public Ship(Ship ship, Dictionary<Ammo, int> ammo)
-        {
 
-        }
         public string Status
         {
             get
@@ -76,7 +72,7 @@ namespace SeaBattle
         {
             get
             {
-                return weight;
+                return CalcWeight();
             }
 
             set
@@ -98,12 +94,9 @@ namespace SeaBattle
             }
         }
 
-        //string IGameObject.Type
-        //{
-        //    get
-        //    {
-        //        throw new NotImplementedException();
-        //    }
-        //}
+        private double CalcWeight()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
