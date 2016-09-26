@@ -10,6 +10,8 @@ namespace TankGame.GameObject
 
     public enum Direction { Top, Bottom, Left, Right, Non }
 
+    public enum Action { Move, Stay, Shot}
+
     public enum Status { Created, Deleted, Stay, Move, Shot, Wounded, Healed }
 
     public interface IGameObject: ISerializable
