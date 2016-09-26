@@ -25,7 +25,7 @@ namespace TankGame
 
         }
 
-        public Map.Map Play(Direction Direction)
+        public Map.Map Play(Direction Direction, GameObject.Action Action)
         {
             foreach (var GameObject in _currentMap.GameObjects)
             {
@@ -34,6 +34,10 @@ namespace TankGame
                     if (GameObject.IsPlayer)
                     {
                         _currentMap.MoveTank((Tank)GameObject, Direction);
+
+                        if (Action == TankGame.GameObject.Action.Shot)
+                            ((Tank)GameObject).Shot();
+
                     }
                     else if (GameObject.IsAI)
                     {

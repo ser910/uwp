@@ -20,22 +20,26 @@ namespace TankGame.GameObject
 
         public void Move(Direction NewDirection)
         {
-            this._status = Status.Move;
-
-            this._direction = NewDirection;
-
             switch (this.Direction)
             {
                 case Direction.Top:
+                    this._status = Status.Move;
+                    this._direction = NewDirection;
                     this._y -= this._speed;
                     break;
                 case Direction.Bottom:
+                    this._status = Status.Move;
+                    this._direction = NewDirection;
                     this._y += this._speed;
                     break;
                 case Direction.Left:
+                    this._status = Status.Move;
+                    this._direction = NewDirection;
                     this._x -= this._speed;
                     break;
                 case Direction.Right:
+                    this._status = Status.Move;
+                    this._direction = NewDirection;
                     this._x += this._speed;
                     break;
                 case Direction.Non:
@@ -47,8 +51,6 @@ namespace TankGame.GameObject
 
         public void MoveBack(Direction NewDirection)
         {
-            this._direction = NewDirection;
-
             switch (this.Direction)
             {
                 case Direction.Top:
