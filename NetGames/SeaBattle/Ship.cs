@@ -8,8 +8,9 @@ namespace SeaBattle
 {
     public class Ship : ISeaBattleGameObject
     {
-        private int crew;
-        private int gunPower;
+        private Dictionary<Crew, int> crew;
+        private Dictionary<Ammo, int> ammo;
+        private Dictionary<Gun, int> guns;
         private int durability;
         private int GunsSpeed;
         private string status;
