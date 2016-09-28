@@ -9,6 +9,8 @@ using TankGame.GameObject;
 
 namespace TankGame
 {
+    public enum Act { Non, Stay, MoveTop, MoveBottom, MoveLeft, MoveRight, Shot }
+
     public class Game : ISerializable
     {
         private List<Map.Map> _maps;
@@ -25,9 +27,9 @@ namespace TankGame
 
         }
 
-        public Map.Map Play(Direction Direction, GameObject.Action Action)
+        public Map.Map Play()
         {
-            
+
 
             return CurrentMap;
         }
@@ -46,6 +48,12 @@ namespace TankGame
 
             if (_currentMap == null)
                 _currentMap = _maps.FirstOrDefault();
+
+            foreach (GameObject.GameObject GameObject in _currentMap.GameObjects)
+            {
+                if (GameObject.IsPlayer == true)
+                    _player = (Tank)GameObject;
+            }
 
             return true;
         }

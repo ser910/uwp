@@ -18,20 +18,16 @@ using TankGame.Map;
 
 namespace WpfTank
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         System.Windows.Threading.DispatcherTimer DispatcherTimer = new System.Windows.Threading.DispatcherTimer();
-        private long TimerTicks = 250;
+        long TimerTicks = 250;
 
-        private Game Game = new Game();
+        Game Game = new Game();
 
-        private float Multiplier = 30;
+        float Multiplier = 30;
 
-        private Direction Direction = Direction.Non;
-        private TankGame.GameObject.Action Action = TankGame.GameObject.Action.Non;
+        Act Act = Act.Stay;
 
         public MainWindow()
         {
@@ -48,12 +44,12 @@ namespace WpfTank
         private void TempInit()
         {
             Map Map = new Map(13, 13);
-            
+
+            Map.AddObject(new Tank(7, 13, 1, 1, Direction.Top, false, true, 1, 1, true, true, false, true)); // player
+
             Map.AddObject(new Tank(1, 1, 1, 1, Direction.Bottom, true, false, 1, 1, true, true, false, true)); // AI
             Map.AddObject(new Tank(7, 1, 2, 1, Direction.Bottom, true, false, 1, 1, true, true, false, true)); // AI
-            Map.AddObject(new Tank(13, 1, 1, 2, Direction.Bottom, true, false, 1, 1, true, true, false, true)); // AI
-            
-            Map.AddObject(new Tank(7, 13, 1, 1, Direction.Top, false, true, 1, 1, true, true, false, true)); // player
+            Map.AddObject(new Tank(13, 1, 1, 2, Direction.Bottom, true, false, 1, 1, true, true, false, true)); // AI            
             
             Map.AddObject(new Wall(2, 2, true, 1, 1, 1, true, false, false, 0, false, false, Direction.Non)); // wall
             Map.AddObject(new Wall(2, 3, true, 1, 1, 1, true, false, false, 0, false, false, Direction.Non)); // wall
@@ -111,15 +107,32 @@ namespace WpfTank
 
         private void Timer(Object Object, EventArgs EventArgs)
         {
-            if (Keyboard.IsKeyDown(Key.W))
+            switch (Act)
             {
-                Draw(Game.Play(Direction.Top, TankGame.GameObject.Action.Move));
-            }
-            else
-            {
-                Draw(Game.Play(Direction, Action));
+                case Act.Stay:
+                    break;
+                case Act.MoveTop:
+                    Game.Player.Move(Direction.Top, Game.CurrentMap);
+                    break;
+                case Act.MoveBottom:
+                    Game.Player.Move(Direction.Bottom, Game.CurrentMap);
+                    break;
+                case Act.MoveLeft:
+                    Game.Player.Move(Direction.Left, Game.CurrentMap);
+                    break;
+                case Act.MoveRight:
+                    Game.Player.Move(Direction.Right, Game.CurrentMap);
+                    break;
+                case Act.Shot:
+                    Game.Player.Shot();
+                    break;
+                default:
+                    break;
             }
 
+            Act = Act.Non;
+
+            Draw(Game.Play());
         }
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
@@ -128,26 +141,22 @@ namespace WpfTank
             {
                 case Key.Up:
                 case Key.W:
-                    Direction = Direction.Top;
-                    Action = TankGame.GameObject.Action.Move;
+                    Act = Act.MoveTop;
                     break;
                 case Key.Left:
                 case Key.A:
-                    Direction = Direction.Left;
-                    Action = TankGame.GameObject.Action.Move;
+                    Act = Act.MoveLeft;
                     break;
                 case Key.Down:
                 case Key.S:
-                    Direction = Direction.Bottom;
-                    Action = TankGame.GameObject.Action.Move;
+                    Act = Act.MoveBottom;
                     break;
                 case Key.Right:
                 case Key.D:
-                    Direction = Direction.Right;
-                    Action = TankGame.GameObject.Action.Move;
+                    Act = Act.MoveRight;
                     break;
                 case Key.Space:
-                    Action = TankGame.GameObject.Action.Shot;
+                    Act = Act.Shot;
                     break;
                 default:
                     break;

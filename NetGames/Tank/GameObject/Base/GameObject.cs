@@ -51,8 +51,6 @@ namespace TankGame.GameObject
 
         protected Direction _direction;
         public Direction Direction { get { return _direction; } }
-        protected Action _action;
-        public Action Action { get { return _action; } }
 
         protected Status _status;
         public Status Status { get { return _status; } }
@@ -77,12 +75,11 @@ namespace TankGame.GameObject
             this._isPlayer = IsPlayer;
 
             this._direction = Direction;
-
-            this._action = Action.Non;
+            
             this._status = Status.Created;
         }
 
-        public void Move(Direction NewDirection, Map.Map Map)
+        public bool Move(Direction NewDirection, Map.Map Map)
         {
             this._status = Status.Move;
             this._direction = NewDirection;
@@ -108,7 +105,7 @@ namespace TankGame.GameObject
             }
 
             if (Map.TransparanteCollision(this,Map.CollisionInList(this)))
-                return;
+                return true;
 
             switch (this.Direction)
             {
@@ -129,6 +126,8 @@ namespace TankGame.GameObject
                 default:
                     break;
             }
+
+            return false;
         }
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)
