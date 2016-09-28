@@ -47,7 +47,7 @@ namespace TankGame.GameObject
 
         Status Status { get; }
 
-        void Move(Direction Direction);
+        void Move(Direction Direction, Map.Map Map);
 
     }
 }

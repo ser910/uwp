@@ -39,17 +39,7 @@ namespace TankGame.Map
             return true;
         }
 
-        public bool MoveObject(TankGame.GameObject.IGameObject GameObject, Direction Direction)
-        {
-            if (!GameObjects.Contains(GameObject))
-                return false;
-            
-
-
-            return true;
-        }
-
-        private bool Validation(IGameObject GameObject)
+        public bool Validation(IGameObject GameObject)
         {
             if (GameObject == null)
                 return false;
@@ -61,7 +51,7 @@ namespace TankGame.Map
             return true;
         }
 
-        private IGameObject CollisionInList(IGameObject GameObject)
+        public IGameObject CollisionInList(IGameObject GameObject)
         {
             foreach(IGameObject GameObjectInList in GameObjects)
             {
@@ -71,7 +61,7 @@ namespace TankGame.Map
             return null;
         }
 
-        private bool Collision(IGameObject first, IGameObject second)
+        public bool Collision(IGameObject first, IGameObject second)
         {
             if (((first.Right >= second.Left && first.Right <= second.Right) || (first.Left <= second.Right && first.Left >= second.Left))
                 &&((first.Bottom >= second.Top && first.Bottom <= second.Bottom) || (first.Top <= second.Bottom && first.Top >= second.Top)))
@@ -79,11 +69,15 @@ namespace TankGame.Map
             return false;
         }
 
-        private bool TransparanteCollision(IGameObject first, IGameObject second)
+        public bool TransparanteCollision(IGameObject first, IGameObject second)
         {
-            if (!first.IsTransparante && !second.IsTransparante)
-                return true;
-            return false;
+            if (first == null || second == null)
+                return false;
+
+            if (first.IsTransparante || second.IsTransparante)
+                return false;
+
+            return true;
         }
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)

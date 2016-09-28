@@ -82,7 +82,7 @@ namespace TankGame.GameObject
             this._status = Status.Created;
         }
 
-        public void Move(Direction NewDirection)
+        public void Move(Direction NewDirection, Map.Map Map)
         {
             this._status = Status.Move;
             this._direction = NewDirection;
@@ -100,6 +100,29 @@ namespace TankGame.GameObject
                     break;
                 case Direction.Right:
                     this._x += this.Speed;
+                    break;
+                case Direction.Non:
+                    break;
+                default:
+                    break;
+            }
+
+            if (Map.TransparanteCollision(this,Map.CollisionInList(this)))
+                return;
+
+            switch (this.Direction)
+            {
+                case Direction.Top:
+                    this._y += this.Speed;
+                    break;
+                case Direction.Bottom:
+                    this._y -= this.Speed;
+                    break;
+                case Direction.Left:
+                    this._x += this.Speed;
+                    break;
+                case Direction.Right:
+                    this._x -= this.Speed;
                     break;
                 case Direction.Non:
                     break;
