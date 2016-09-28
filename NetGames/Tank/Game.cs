@@ -9,6 +9,8 @@ using TankGame.GameObject;
 
 namespace TankGame
 {
+    public enum Act { Non, Stay, MoveTop, MoveBottom, MoveLeft, MoveRight, Shot }
+
     public class Game : ISerializable
     {
         private List<Map.Map> _maps;
@@ -25,30 +27,9 @@ namespace TankGame
 
         }
 
-        public Map.Map Play(Direction Direction, GameObject.Action Action)
+        public Map.Map Play()
         {
-            foreach (var GameObject in _currentMap.GameObjects)
-            {
-                if (GameObject.Type is Tank && GameObject.IsMove)
-                {
-                    if (GameObject.IsPlayer)
-                    {
-                        _currentMap.MoveTank((Tank)GameObject, Direction);
 
-                        if (Action == TankGame.GameObject.Action.Shot)
-                            ((Tank)GameObject).Shot();
-
-                    }
-                    else if (GameObject.IsAI)
-                    {
-                        ((Tank)GameObject).AIMove(CurrentMap);
-                    }
-                }
-                else if (GameObject.Type is Bullet && GameObject.IsMove)
-                {
-                    ((Bullet)GameObject).Move();
-                }
-            }
 
             return CurrentMap;
         }
@@ -68,12 +49,18 @@ namespace TankGame
             if (_currentMap == null)
                 _currentMap = _maps.FirstOrDefault();
 
+            foreach (GameObject.GameObject GameObject in _currentMap.GameObjects)
+            {
+                if (GameObject.IsPlayer == true)
+                    _player = (Tank)GameObject;
+            }
+
             return true;
         }
 
         private bool ValidationMap(Map.Map Map)
         {
-            if (Map == null || Map.Width < 0 || Map.Height < 0)
+            if (Map == null || Map.Width <= 0 || Map.Height <= 0)
                 return false;
 
             return true;

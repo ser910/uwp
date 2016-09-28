@@ -5,8 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfTank"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="450" Width="450" KeyDown="Window_KeyDown">
     <Grid>
-        
+        <Canvas Name="MainCanvas">
+            
+        </Canvas>
     </Grid>
 </Window>

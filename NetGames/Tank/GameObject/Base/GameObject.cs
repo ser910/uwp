@@ -27,6 +27,8 @@ namespace TankGame.GameObject
 
         protected double _health;
         public double Health { get { return _health; } }
+        protected double _speed;
+        public double Speed { get { return _speed; } }
 
         protected bool _isVisible;
         public bool IsVisible { get { return _isVisible; } }
@@ -53,7 +55,7 @@ namespace TankGame.GameObject
         protected Status _status;
         public Status Status { get { return _status; } }
 
-        public GameObject(double X, double Y, double Width = 1, double Height = 1, double Health = 1, bool IsVisible = true, bool IsTransparante = false, bool IsCanBeDestroyed = false, bool IsMove = false, bool IsAI = false, bool IsPlayer = false, Direction Direction = Direction.Non)
+        public GameObject(double X, double Y, double Width = 1, double Height = 1, double Health = 1, double Speed = 0, bool IsVisible = true, bool IsTransparante = false, bool IsCanBeDestroyed = false, bool IsMove = false, bool IsAI = false, bool IsPlayer = false, Direction Direction = Direction.Non)
         {
             this._x = X;
             this._y = Y;
@@ -62,6 +64,7 @@ namespace TankGame.GameObject
             this._height = Height;
 
             this._health = Health;
+            this._speed = Speed;
 
             this._isVisible = IsVisible;
             this._isTransparante = IsTransparante;
@@ -72,8 +75,59 @@ namespace TankGame.GameObject
             this._isPlayer = IsPlayer;
 
             this._direction = Direction;
-
+            
             this._status = Status.Created;
+        }
+
+        public bool Move(Direction NewDirection, Map.Map Map)
+        {
+            this._status = Status.Move;
+            this._direction = NewDirection;
+
+            switch (this.Direction)
+            {
+                case Direction.Top:
+                    this._y -= this.Speed;
+                    break;
+                case Direction.Bottom:
+                    this._y += this.Speed;
+                    break;
+                case Direction.Left:
+                    this._x -= this.Speed;
+                    break;
+                case Direction.Right:
+                    this._x += this.Speed;
+                    break;
+                case Direction.Non:
+                    break;
+                default:
+                    break;
+            }
+
+            if (Map.TransparanteCollision(this,Map.CollisionInList(this)))
+                return true;
+
+            switch (this.Direction)
+            {
+                case Direction.Top:
+                    this._y += this.Speed;
+                    break;
+                case Direction.Bottom:
+                    this._y -= this.Speed;
+                    break;
+                case Direction.Left:
+                    this._x += this.Speed;
+                    break;
+                case Direction.Right:
+                    this._x -= this.Speed;
+                    break;
+                case Direction.Non:
+                    break;
+                default:
+                    break;
+            }
+
+            return false;
         }
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)

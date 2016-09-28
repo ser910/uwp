@@ -10,8 +10,6 @@ namespace TankGame.GameObject
 
     public enum Direction { Top, Bottom, Left, Right, Non }
 
-    public enum Action { Move, Stay, Shot}
-
     public enum Status { Created, Deleted, Stay, Move, Shot, Wounded, Healed }
 
     public interface IGameObject: ISerializable
@@ -27,7 +25,8 @@ namespace TankGame.GameObject
         double Height { get; }
         
         double Health { get; }
-        
+        double Speed { get; }
+
         bool IsVisible { get; }
         bool IsTransparante { get; }
         bool IsCanBeDestroyed { get; }
@@ -42,7 +41,10 @@ namespace TankGame.GameObject
         double Bottom { get; }
         
         Direction Direction { get; }
-        
+
         Status Status { get; }
+
+        bool Move(Direction Direction, Map.Map Map);
+
     }
 }
