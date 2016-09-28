@@ -12,7 +12,7 @@ namespace TankGame.GameObject
             : base(X, Y, Width, Health, Health, Speed, IsVisible, IsTransparante, IsCanBeDestroyed, IsMove, IsAI, IsPlayer, Direction)
         {
 
-        }
+        } 
 
         public void Move()
         {
