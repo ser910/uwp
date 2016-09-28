@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -79,10 +80,10 @@ namespace SeaBattle
         /// os dependeble;
         /// </summary>
         /// <param name="name"></param>
-        private void GetParams(string name)
+        private void GetParams(string name, Type classType)
         {
             status = "new";
-            throw new NotImplementedException();
+            FieldInfo [] fields = classType.GetFields(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public);
         }
     }
 }
