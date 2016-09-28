@@ -27,28 +27,7 @@ namespace TankGame
 
         public Map.Map Play(Direction Direction, GameObject.Action Action)
         {
-            foreach (var GameObject in _currentMap.GameObjects)
-            {
-                if (GameObject.Type is Tank && GameObject.IsMove)
-                {
-                    if (GameObject.IsPlayer)
-                    {
-                        _currentMap.MoveTank((Tank)GameObject, Direction);
-
-                        if (Action == TankGame.GameObject.Action.Shot)
-                            ((Tank)GameObject).Shot();
-
-                    }
-                    else if (GameObject.IsAI)
-                    {
-                        ((Tank)GameObject).AIMove(CurrentMap);
-                    }
-                }
-                else if (GameObject.Type is Bullet && GameObject.IsMove)
-                {
-                    ((Bullet)GameObject).Move();
-                }
-            }
+            
 
             return CurrentMap;
         }
@@ -73,7 +52,7 @@ namespace TankGame
 
         private bool ValidationMap(Map.Map Map)
         {
-            if (Map == null || Map.Width < 0 || Map.Height < 0)
+            if (Map == null || Map.Width <= 0 || Map.Height <= 0)
                 return false;
 
             return true;

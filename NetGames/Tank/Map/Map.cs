@@ -39,26 +39,14 @@ namespace TankGame.Map
             return true;
         }
 
-        public bool MoveTank(TankGame.GameObject.Tank Tank, Direction Direction)
+        public bool MoveObject(TankGame.GameObject.IGameObject GameObject, Direction Direction)
         {
-            if (!GameObjects.Contains(Tank))
+            if (!GameObjects.Contains(GameObject))
                 return false;
+            
 
-            Tank.Move(Direction);
-
-            if (!Validation(Tank)
-                || (CollisionInList(Tank) != null  && TransparanteCollision(Tank, CollisionInList(Tank))))
-            {
-                MoveBack(Tank, Direction);
-                return false;
-            }
 
             return true;
-        }
-        
-        private void MoveBack(TankGame.GameObject.Tank Tank, Direction Direction)
-        {
-            Tank.MoveBack(Direction);
         }
 
         private bool Validation(IGameObject GameObject)

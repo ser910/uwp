@@ -27,6 +27,8 @@ namespace TankGame.GameObject
 
         protected double _health;
         public double Health { get { return _health; } }
+        protected double _speed;
+        public double Speed { get { return _speed; } }
 
         protected bool _isVisible;
         public bool IsVisible { get { return _isVisible; } }
@@ -49,11 +51,13 @@ namespace TankGame.GameObject
 
         protected Direction _direction;
         public Direction Direction { get { return _direction; } }
+        protected Action _action;
+        public Action Action { get { return _action; } }
 
         protected Status _status;
         public Status Status { get { return _status; } }
 
-        public GameObject(double X, double Y, double Width = 1, double Height = 1, double Health = 1, bool IsVisible = true, bool IsTransparante = false, bool IsCanBeDestroyed = false, bool IsMove = false, bool IsAI = false, bool IsPlayer = false, Direction Direction = Direction.Non)
+        public GameObject(double X, double Y, double Width = 1, double Height = 1, double Health = 1, double Speed = 0, bool IsVisible = true, bool IsTransparante = false, bool IsCanBeDestroyed = false, bool IsMove = false, bool IsAI = false, bool IsPlayer = false, Direction Direction = Direction.Non)
         {
             this._x = X;
             this._y = Y;
@@ -62,6 +66,7 @@ namespace TankGame.GameObject
             this._height = Height;
 
             this._health = Health;
+            this._speed = Speed;
 
             this._isVisible = IsVisible;
             this._isTransparante = IsTransparante;
@@ -73,7 +78,34 @@ namespace TankGame.GameObject
 
             this._direction = Direction;
 
+            this._action = Action.Non;
             this._status = Status.Created;
+        }
+
+        public void Move(Direction NewDirection)
+        {
+            this._status = Status.Move;
+            this._direction = NewDirection;
+
+            switch (this.Direction)
+            {
+                case Direction.Top:
+                    this._y -= this.Speed;
+                    break;
+                case Direction.Bottom:
+                    this._y += this.Speed;
+                    break;
+                case Direction.Left:
+                    this._x -= this.Speed;
+                    break;
+                case Direction.Right:
+                    this._x += this.Speed;
+                    break;
+                case Direction.Non:
+                    break;
+                default:
+                    break;
+            }
         }
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)
