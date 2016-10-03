@@ -84,6 +84,10 @@ namespace SeaBattle
         {
             status = "new";
             IEnumerable<FieldInfo> fields = classType.GetRuntimeFields();
+            foreach (var field in fields)
+            {
+
+            }
         }
     }
 }
