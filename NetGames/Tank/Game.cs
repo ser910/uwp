@@ -29,7 +29,17 @@ namespace TankGame
 
         public Map.Map Play()
         {
+            foreach (GameObject.GameObject GameObject in CurrentMap.GameObjects)
+            {
+                if (GameObject.Name == "Bullet")
+                {
+                    GameObject.Move(GameObject.Direction, CurrentMap);
+                }
+                else if (GameObject.Name == "Tank" && GameObject.IsAI)
+                {
 
+                }
+            }
 
             return CurrentMap;
         }
