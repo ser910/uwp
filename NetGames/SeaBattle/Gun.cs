@@ -15,5 +15,9 @@ namespace SeaBattle
             }
         }
 
+        public IGameObject Serialize()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

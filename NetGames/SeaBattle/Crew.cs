@@ -17,5 +17,10 @@ namespace SeaBattle
                 return typeof(Crew);
             }
         }
+
+        public IGameObject Serialize()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
