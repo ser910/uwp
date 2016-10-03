@@ -25,7 +25,7 @@ namespace WpfTank
 
         Game Game = new Game();
 
-        float Multiplier = 30;
+        float Multiplier = 25;
 
         Act Act = Act.Stay;
 
