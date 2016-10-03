@@ -15,9 +15,15 @@ namespace TankGame.GameObject
 
         }
 
-        public Bullet Shot()
+        public bool Shot(Map.Map Map)
         {
-            return new Bullet(this.X, this.Y, this.Direction);
+            Bullet Bullet = new Bullet(this.X, this.Y, this.Direction);
+
+            Bullet.Move(this.Direction,Map);
+
+            Map.AddObject(Bullet);
+
+            return true;
         }
 
     }

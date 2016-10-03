@@ -25,7 +25,7 @@ namespace WpfTank
 
         Game Game = new Game();
 
-        float Multiplier = 30;
+        float Multiplier = 25;
 
         Act Act = Act.Stay;
 
@@ -124,7 +124,7 @@ namespace WpfTank
                     Game.Player.Move(Direction.Right, Game.CurrentMap);
                     break;
                 case Act.Shot:
-                    Game.Player.Shot();
+                    Game.Player.Shot(Game.CurrentMap);
                     break;
                 default:
                     break;

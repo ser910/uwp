@@ -104,7 +104,7 @@ namespace TankGame.GameObject
                     break;
             }
 
-            if (Map.TransparanteCollision(this,Map.CollisionInList(this)))
+            if (!Map.TransparanteCollision(this,Map.CollisionInList(this)))
                 return true;
 
             switch (this.Direction)

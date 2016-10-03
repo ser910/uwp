@@ -55,7 +55,7 @@ namespace TankGame.Map
         {
             foreach(IGameObject GameObjectInList in GameObjects)
             {
-                if (Collision(GameObject, GameObjectInList))
+                if (GameObject != GameObjectInList && Collision(GameObject, GameObjectInList))
                     return GameObjectInList;
             }
             return null;
