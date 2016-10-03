@@ -159,5 +159,10 @@ namespace SeaBattle
 
             return false;
         }
+
+        public IGameObject Serialize()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

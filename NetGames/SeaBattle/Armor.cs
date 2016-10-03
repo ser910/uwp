@@ -19,5 +19,9 @@ namespace SeaBattle
         }
         public double Durability { get { return _hp; } }
 
+        public IGameObject Serialize()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

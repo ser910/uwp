@@ -17,5 +17,10 @@ namespace SeaBattle
                 return typeof(Ammo);
             }
         }
+
+        public IGameObject Serialize()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

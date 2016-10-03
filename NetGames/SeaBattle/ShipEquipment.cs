@@ -4,6 +4,8 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using SQLite.Net;
+
 
 namespace SeaBattle
 {
@@ -82,11 +84,19 @@ namespace SeaBattle
         /// <param name="name"></param>
         private void GetParams(string name, Type classType)
         {
-            status = "new";
+ 
+            //SQLiteConnection cnn = new SQLiteConnection("");
+            ////cnn
+            //SQLiteCommand cmd = new SQLiteCommand(cnn);
+            //cmd.CommandText();
+            //cmd.ExecuteNonQuery();
+            //SQLiteConnectionPool cp = 
+            //status = "new";
             IEnumerable<FieldInfo> fields = classType.GetRuntimeFields();
             foreach (var field in fields)
             {
 
+                
             }
         }
     }

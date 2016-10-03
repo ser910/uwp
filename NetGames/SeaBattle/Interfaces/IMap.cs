@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
+using SQLite.Net;
 
 namespace SeaBattle
 {
-    public interface IMap : ISerializable
+    public interface IMap : ISerializable<IMap>
     {
         //Размер карты
         int X { get; }

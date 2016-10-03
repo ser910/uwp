@@ -32,5 +32,10 @@ namespace SeaBattle
         {
             throw new NotImplementedException();
         }
+
+        public IGame Serialize()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
