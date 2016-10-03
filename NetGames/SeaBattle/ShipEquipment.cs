@@ -17,7 +17,7 @@ namespace SeaBattle
         public ShipEquipment(string name)
         {
             this.name = name;
-            GetParams(name);
+            GetParams(name, typeof(ShipEquipment));
         }
         public double Weight
         {
@@ -83,7 +83,7 @@ namespace SeaBattle
         private void GetParams(string name, Type classType)
         {
             status = "new";
-            FieldInfo [] fields = classType.GetFields(BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public);
+            IEnumerable<FieldInfo> fields = classType.GetRuntimeFields();
         }
     }
 }
